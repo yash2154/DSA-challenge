@@ -8,7 +8,7 @@ Welcome to my Data Structures and Algorithms (DSA) challenge repository! This co
 
 ## Introduction
 
-In the world of software development, a solid foundation in Data Structures and Algorithms is crucial. This repository is a reflection of my commitment to continuous learning and improvement. Each folder contains solutions to specific DSA problems and implementations of various data structures, showcasing my progress and proficiency in using C++ for algorithmic problem-solving.
+In the world of software development, a solid foundation in Data Structures and Algorithms is crucial. This repository is a reflection of my commitment to continuous learning and improvement. Each file  contains solutions to specific DSA problems and implementations of various data structures, showcasing my progress and proficiency in using C++ for algorithmic problem-solving.
 
 ## Directory Structure
 
