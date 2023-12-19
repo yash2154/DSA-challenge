@@ -92,6 +92,30 @@ public:
         }
         return rval;
     }
+    LinkedList kgroup(int k)
+    {
+        LinkedList rval;
+        LinkedList temp;
+        Node *current = head;
+
+        int count = 0;
+        while (current != nullptr)
+        {
+            temp.InsertAtEnd(current->data);
+            current = current->next;
+
+            count++;
+
+            if (count == k)
+            {
+                temp.reverse();
+                rval = rval + temp;
+                temp.head = nullptr;
+            }
+        }
+        rval = rval + temp;
+        return rval;
+    }
 };
 
 int main()
@@ -116,5 +140,10 @@ int main()
     list2.Display();
     list1=list1+list2;
     list1.Display();
+
+    list1.InsertAtEnd(5);
+    LinkedList list4;
+    list4=list1.kgroup(3);
+    list4.Display();
     return 0;
 }
