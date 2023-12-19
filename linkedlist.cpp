@@ -38,7 +38,7 @@ public:
             current = current->next;
         }
 
-        std::cout<<"\n";
+        std::cout << "\n";
     }
 
     int InsertAtBeginning(int value)
@@ -74,10 +74,30 @@ public:
 
         head = prev;
     }
+    LinkedList operator+(LinkedList temp)
+    {
+        LinkedList rval;
+        Node *current = this->head;
+        while (current != nullptr)
+        {
+            rval.InsertAtEnd(current->data);
+            current = current->next;
+        }
+
+        Node *current1 = temp.head;
+        while (current1 != nullptr)
+        {
+            rval.InsertAtEnd(current1->data);
+            current1 = current1->next;
+        }
+        return rval;
+    }
 };
 
 int main()
 {
+
+    // trial run of function and class 
     LinkedList list;
     list.InsertAtEnd(1);
     list.InsertAtBeginning(4);
@@ -87,6 +107,14 @@ int main()
     list.reverse();
     list.Display();
 
-
+    LinkedList list1, list2;
+    list1.InsertAtEnd(1);
+    list1.InsertAtEnd(2);
+    list2.InsertAtEnd(3);
+    list2.InsertAtEnd(4);
+    list1.Display();
+    list2.Display();
+    list1=list1+list2;
+    list1.Display();
     return 0;
 }
