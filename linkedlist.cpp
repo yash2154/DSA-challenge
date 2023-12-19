@@ -37,6 +37,8 @@ public:
             std::cout << current->data << " ";
             current = current->next;
         }
+
+        std::cout<<"\n";
     }
 
     int InsertAtBeginning(int value)
@@ -57,6 +59,21 @@ public:
         }
         return value;
     }
+    void reverse()
+    {
+        Node *prev = nullptr;
+        Node *current = head;
+        Node *next = nullptr;
+        while (current != nullptr)
+        {
+            next = current->next;
+            current->next = prev;
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
+    }
 };
 
 int main()
@@ -67,6 +84,9 @@ int main()
     list.InsertAtEnd(2);
     list.InsertAtEnd(3);
     list.Display();
+    list.reverse();
+    list.Display();
+
 
     return 0;
 }
