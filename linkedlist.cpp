@@ -194,26 +194,26 @@ int main()
     list.InsertAtEnd(3);
     list.InsertAtEnd(4);
     list.Display();
-    // list.reverse();
-    // list.Display();
+    list.reverse();
+    list.Display();
 
-    // LinkedList list1, list2;
-    // list1.InsertAtEnd(1);
-    // list1.InsertAtEnd(2);
-    // list2.InsertAtEnd(3);
-    // list2.InsertAtEnd(4);
-    // list1.Display();
-    // list2.Display();
-    // list1 = list1 + list2;
-    // list1.Display();
+    LinkedList list1, list2;
+    list1.InsertAtEnd(1);
+    list1.InsertAtEnd(2);
+    list2.InsertAtEnd(3);
+    list2.InsertAtEnd(4);
+    list1.Display();
+    list2.Display();
+    list1 = list1 + list2;
+    list1.Display();
 
-    // list1.InsertAtEnd(5);
-    // LinkedList list4;
-    // list4 = list1.kgroup(3);
-    // list4.Display();
-    // list.Remove(1);
-    // list.Display();
-    list.RemoveNth(5);
+    list1.InsertAtEnd(5);
+    LinkedList list4;
+    list4 = list1.kgroup(3);
+    list4.Display();
+    list.Remove(1);
+    list.Display();
+    list.RemoveNth(3);
     list.Display();
     return 0;
 }
