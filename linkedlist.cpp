@@ -146,6 +146,40 @@ public:
             current = current->next;
         }
         return -1;
+    }
+
+    int RemoveNth(int index)
+    {
+        Node *current = head;
+        Node *temp = current;
+
+        int counter = 0;
+
+        while (current != nullptr)
+        {
+
+            if (counter == index)
+            {
+                if(current==head)
+                {
+                    head = current->next;
+                    int returnvalue= current->data;
+                    delete current;
+                    return returnvalue;
+                }
+
+                else{
+                    temp->next=current->next;
+                    int returnvalue = current->data;
+                    delete current;
+                    return returnvalue;
+                }
+            }
+            counter++;
+            temp = current;
+            current = current->next;
+        }
+        return -1;
 
     }
 };
@@ -156,28 +190,30 @@ int main()
     // trial run of function and class
     LinkedList list;
     list.InsertAtEnd(1);
-    list.InsertAtBeginning(4);
     list.InsertAtEnd(2);
     list.InsertAtEnd(3);
+    list.InsertAtEnd(4);
     list.Display();
-    list.reverse();
-    list.Display();
+    // list.reverse();
+    // list.Display();
 
-    LinkedList list1, list2;
-    list1.InsertAtEnd(1);
-    list1.InsertAtEnd(2);
-    list2.InsertAtEnd(3);
-    list2.InsertAtEnd(4);
-    list1.Display();
-    list2.Display();
-    list1 = list1 + list2;
-    list1.Display();
+    // LinkedList list1, list2;
+    // list1.InsertAtEnd(1);
+    // list1.InsertAtEnd(2);
+    // list2.InsertAtEnd(3);
+    // list2.InsertAtEnd(4);
+    // list1.Display();
+    // list2.Display();
+    // list1 = list1 + list2;
+    // list1.Display();
 
-    list1.InsertAtEnd(5);
-    LinkedList list4;
-    list4 = list1.kgroup(3);
-    list4.Display();
-    list.Remove(1);
+    // list1.InsertAtEnd(5);
+    // LinkedList list4;
+    // list4 = list1.kgroup(3);
+    // list4.Display();
+    // list.Remove(1);
+    // list.Display();
+    list.RemoveNth(5);
     list.Display();
     return 0;
 }
