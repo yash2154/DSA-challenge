@@ -116,12 +116,44 @@ public:
         rval = rval + temp;
         return rval;
     }
+
+    int Remove(int value)
+    {
+        Node *current = head;
+        Node *temp = current;
+        while (current != nullptr)
+        {
+
+            if (current->data == value)
+            {
+
+                if (current == head)
+                {
+                    head = current->next;
+                    delete current;
+                    return value;
+                }
+                else
+                {
+
+                    temp->next = current->next;
+                    delete current;
+                    return value;
+                }
+            }
+            temp = current;
+
+            current = current->next;
+        }
+        return -1;
+
+    }
 };
 
 int main()
 {
 
-    // trial run of function and class 
+    // trial run of function and class
     LinkedList list;
     list.InsertAtEnd(1);
     list.InsertAtBeginning(4);
@@ -138,12 +170,14 @@ int main()
     list2.InsertAtEnd(4);
     list1.Display();
     list2.Display();
-    list1=list1+list2;
+    list1 = list1 + list2;
     list1.Display();
 
     list1.InsertAtEnd(5);
     LinkedList list4;
-    list4=list1.kgroup(3);
+    list4 = list1.kgroup(3);
     list4.Display();
+    list.Remove(1);
+    list.Display();
     return 0;
 }
