@@ -12,7 +12,7 @@ class Stack
 public:
     int size=0;
 
-    StackNode *head;
+    StackNode *head=nullptr;
     void Push(int value)
     {
         StackNode *newnode = new StackNode();
@@ -49,6 +49,16 @@ public:
         }
         std::cout << "\n";
     }
+
+    bool IsEmpty()
+    {
+        if(head==nullptr)
+        {
+            return true;
+        }
+
+        return false;
+    }
 };
 
 int main()
@@ -67,4 +77,5 @@ int main()
     stack.display();
     std::cout<<stack.Peek()<<"\n";
     stack.display();
+    std::cout<<stack.IsEmpty()<<"\n";
 }
